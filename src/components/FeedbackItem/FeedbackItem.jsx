@@ -1,9 +1,10 @@
+import Card from '../../UI/Card';
 const FeedbackItem = ({ feedbackItem }) => {
   return (
-    <div className="card">
+    <Card>
       <div className="num-display">{feedbackItem.rating}</div>
       <div className="text-display">{feedbackItem.text}</div>
-    </div>
+    </Card>
   );
 };
 
