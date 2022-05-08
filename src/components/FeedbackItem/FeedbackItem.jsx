@@ -1,10 +1,7 @@
 import PropTypes from 'prop-types';
 import { FaTimes } from 'react-icons/fa';
 import Card from '../../UI/Card';
-const FeedbackItem = ({ feedbackItem }) => {
-  const handleClick = id => {
-    console.log(id);
-  };
+const FeedbackItem = ({ feedbackItem, handleClick }) => {
   return (
     <Card>
       <div className="num-display">{feedbackItem.rating}</div>

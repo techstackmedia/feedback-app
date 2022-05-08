@@ -6,9 +6,12 @@ import FeedbackData from './mocks/FeedbackData';
 
 const App = () => {
   const [feedback, setFeedback] = useState(FeedbackData);
+  const clickDeleteHandler = id => {
+    console.log('App', id);
+  };
   return (
     <>
-      <FeedbackList feedback={feedback} />
+      <FeedbackList feedback={feedback} handleDelete={clickDeleteHandler} />
     </>
   );
 };
