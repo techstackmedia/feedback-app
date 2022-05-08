@@ -3,6 +3,7 @@ const Header = ({ text, bgColor, textColor }) => {
     backgroundColor: bgColor,
     color: textColor,
   };
+  
   return (
     <header style={headerStyles}>
       <div className="container">
