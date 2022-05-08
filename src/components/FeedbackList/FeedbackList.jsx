@@ -10,6 +10,7 @@ const FeedbackList = ({ feedback, handleDelete }) => {
       />
     );
   });
+  
   if (!feedback || feedback.length === 0) {
     return 'No Feedback Yet';
   } else {
