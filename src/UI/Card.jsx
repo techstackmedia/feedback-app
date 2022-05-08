@@ -1,5 +1,6 @@
 const Card = ({ children, reverse }) => {
-  return <div className={`card ${reverse && 'reverse'}`}>{children}</div>;
+  const classes = `card ${reverse && 'reverse'}`;
+  return <div className={classes}>{children}</div>;
 };
 
 export default Card;
