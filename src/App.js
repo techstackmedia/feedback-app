@@ -2,7 +2,9 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 import Header from './components/Header/Header';
 import FeedbackList from './components/FeedbackList/FeedbackList';
+import FeedbackStats from './components/FeedbackStats/FeedbackStats'
 import FeedbackData from './mocks/FeedbackData';
+
 
 const App = () => {
   const [feedback, setFeedback] = useState(FeedbackData);
@@ -19,6 +21,7 @@ const App = () => {
     <>
     <Header />
     <div className="container">
+      <FeedbackStats feedback={feedback} />
       <FeedbackList feedback={feedback} handleDelete={clickDeleteHandler} />
     </div>
     </>
