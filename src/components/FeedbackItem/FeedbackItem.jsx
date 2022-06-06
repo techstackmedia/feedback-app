@@ -3,7 +3,7 @@ import { FaRegLightbulb } from "react-icons/fa";
 import { FaLightbulb } from "react-icons/fa";
 import PropTypes from 'prop-types';
 import { FaTimes } from 'react-icons/fa';
-import Card from '../../UI/Card';
+import Card from '../../Customs/Card';
 const FeedbackItem = ({ feedbackItem, handleClick }) => {
   const [isDarkMode, setIsDarkMode] = useState(true);
   const handleModeClick = () => {
