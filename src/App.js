@@ -9,18 +9,19 @@ const App = () => {
   const clickDeleteHandler = id => {
     if (window.confirm('Are you sure you want to delete?')) {
       setFeedback(prev => {
-        return prev.filter((item) => {  
+        return prev.filter(item => {
           return item.id !== id;
-        })
-      })
-    };
+        });
+      });
+    }
   };
+
   return (
     <>
-    <Header />
-    <div className="container">
-      <FeedbackList feedback={feedback} handleDelete={clickDeleteHandler} />
-    </div>
+      <Header />
+      <div className="container">
+        <FeedbackList feedback={feedback} handleDelete={clickDeleteHandler} />
+      </div>
     </>
   );
 };

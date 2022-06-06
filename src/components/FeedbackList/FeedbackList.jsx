@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import FeedbackItem from '../FeedbackItem/FeedbackItem';
+
 const FeedbackList = ({ feedback, handleDelete }) => {
   const feedbackElement = feedback.map(feedbackItem => {
     return (
@@ -10,7 +11,7 @@ const FeedbackList = ({ feedback, handleDelete }) => {
       />
     );
   });
-  
+
   if (!feedback || feedback.length === 0) {
     return 'No Feedback Yet';
   } else {
