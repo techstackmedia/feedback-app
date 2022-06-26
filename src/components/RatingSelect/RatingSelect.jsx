@@ -6,7 +6,7 @@ const RatingSelect = ({ select }) => {
     setSelected(+e.currentTarget.value);
     select(+e.currentTarget.value);
   };
-  const numbers = Array.from(Array(11).keys()).splice(1);
+  const numbers = [...Array(11).keys()].splice(1);
   const selectList = numbers.map(item => {
     return (
       <li key={item}>
