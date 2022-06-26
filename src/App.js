@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 import Header from './components/Header/Header';
+import FeedbackItem from './components/FeedbackItem/FeedbackItem';
 import FeedbackList from './components/FeedbackList/FeedbackList';
-import FeedbackStats from './components/FeedbackStats/FeedbackStats'
+import FeedbackStats from './components/FeedbackStats/FeedbackStats';
 import FeedbackData from './mocks/FeedbackData';
 
 
@@ -11,19 +12,20 @@ const App = () => {
   const clickDeleteHandler = id => {
     if (window.confirm('Are you sure you want to delete?')) {
       setFeedback(prev => {
-        return prev.filter((item) => {  
+        return prev.filter(item => {
           return item.id !== id;
-        })
-      })
-    };
+        });
+      });
+    }
   };
+
   return (
     <>
-    <Header />
-    <div className="container">
-      <FeedbackStats feedback={feedback} />
-      <FeedbackList feedback={feedback} handleDelete={clickDeleteHandler} />
-    </div>
+      <Header />
+      <div className="container">
+        <FeedbackStats feedback={feedback} />
+        <FeedbackList feedback={feedback} handleDelete={clickDeleteHandler} />
+      </div>
     </>
   );
 };
@@ -38,6 +40,30 @@ Header.propTypes = {
   text: PropTypes.string,
   bgColor: PropTypes.string,
   textColor: PropTypes.string,
+};
+
+FeedbackStats.prototype = {
+  feedback: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      rating: PropTypes.number,
+      text: PropTypes.string,
+    }).isRequired
+  ),
+};
+
+FeedbackList.propTypes = {
+  feedback: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      text: PropTypes.string.isRequired,
+      rating: PropTypes.number.isRequired,
+    })
+  ),
+};
+
+FeedbackItem.propTypes = {
+  feedbackItem: PropTypes.object.isRequired,
 };
 
 export default App;
