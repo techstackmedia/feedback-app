@@ -1,12 +1,12 @@
 import { useState } from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 import Header from './components/Header/Header';
 import FeedbackForm from './components/FeedbackForm/FeedbackForm';
 import FeedbackList from './components/FeedbackList/FeedbackList';
 import FeedbackItem from './components/FeedbackItem/FeedbackItem';
 import FeedbackStats from './components/FeedbackStats/FeedbackStats';
 import FeedbackData from './mocks/FeedbackData';
-
+import Button from './Customs/Button';
 
 const App = () => {
   const [feedback, setFeedback] = useState(FeedbackData);
@@ -66,6 +66,19 @@ FeedbackList.propTypes = {
 
 FeedbackItem.propTypes = {
   feedbackItem: PropTypes.object.isRequired,
+};
+
+Button.defaultProps = {
+  version: 'primary',
+  type: 'button',
+  isDisabled: false,
+};
+
+Button.propTypes = {
+  children: PropTypes.node,
+  version: PropTypes.string,
+  type: PropTypes.string,
+  isDisabled: PropTypes.bool,
 };
 
 export default App;
