@@ -60,7 +60,7 @@ header {
 }
 
 .card.undefined {
-  height: 208.79px;
+  max-height: 328.79px;
 }
 
 .rating li,
