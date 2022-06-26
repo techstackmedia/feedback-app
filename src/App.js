@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types'
 import Header from './components/Header/Header';
-import FeedbackItem from './components/FeedbackItem/FeedbackItem';
+import FeedbackForm from './components/FeedbackForm/FeedbackForm';
 import FeedbackList from './components/FeedbackList/FeedbackList';
+import FeedbackItem from './components/FeedbackItem/FeedbackItem';
 import FeedbackStats from './components/FeedbackStats/FeedbackStats';
 import FeedbackData from './mocks/FeedbackData';
 
@@ -23,6 +24,7 @@ const App = () => {
     <>
       <Header />
       <div className="container">
+        <FeedbackForm />
         <FeedbackStats feedback={feedback} />
         <FeedbackList feedback={feedback} handleDelete={clickDeleteHandler} />
       </div>
