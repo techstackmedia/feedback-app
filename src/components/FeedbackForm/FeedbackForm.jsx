@@ -5,7 +5,7 @@ import RatingSelect from '../RatingSelect/RatingSelect';
 
 const FeedbackForm = () => {
   const [text, setText] = useState('');
-  const [rating, setRating] = useState(10);
+  const [setRating] = useState(10);
   const [btnDisabled, setBtnDisabled] = useState(true);
   const [message, setMessage] = useState('');
 
@@ -22,10 +22,10 @@ const FeedbackForm = () => {
     }
     setText(e.target.value);
   };
-
   const handleSelect = rating => {
     setRating(rating);
   };
+
   return (
     <Card>
       <h2>How would rate your service with us?</h2>

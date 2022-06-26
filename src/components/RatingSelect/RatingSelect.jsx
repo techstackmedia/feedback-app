@@ -4,9 +4,8 @@ const RatingSelect = ({ select }) => {
   const [selected, setSelected] = useState(10);
   const handleChange = e => {
     setSelected(+e.currentTarget.value);
-    // select(+e.currentTarget.value);
+    select(+e.currentTarget.value);
   };
-
   const numbers = Array.from(Array(11).keys()).splice(1);
   const selectList = numbers.map(item => {
     return (
