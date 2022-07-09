@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { useState } from 'react';
 import { FaRegLightbulb, FaLightbulb, FaTimes } from 'react-icons/fa';
 import FeedbackContext from '../../context/FeedbackContext';
-import Card from '../../Customs/Card';
+import Card from '../../shared/Card';
 
 const FeedbackItem = ({ feedbackItem }) => {
   const { clickDeleteHandler } = useContext(FeedbackContext);
