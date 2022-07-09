@@ -48,6 +48,14 @@ const FeedbackProvider = ({ children }) => {
     });
   };
 
+  const clickUpdateHandler = (id, itemUpdate) => {
+    setFeedback(
+      feedback.map(item => {
+        return item.id === id ? { ...item, ...itemUpdate } : item;
+      })
+    );
+  };
+
   return (
     <FeedbackContext.Provider
       value={{
@@ -56,6 +64,7 @@ const FeedbackProvider = ({ children }) => {
         clickAddHandler,
         clickDeleteHandler,
         clickEditHandler,
+        clickUpdateHandler,
       }}
     >
       {children}
