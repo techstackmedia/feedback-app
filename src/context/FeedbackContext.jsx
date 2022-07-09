@@ -21,6 +21,11 @@ const FeedbackProvider = ({ children }) => {
     },
   ]);
 
+  const [feedbackEdit, setFeedbackEdit] = useState({
+    item: {},
+    edit: false,
+  });
+
   const clickAddHandler = newFeedback => {
     newFeedback.id = uuidv4();
     setFeedback([newFeedback, ...feedback]);
@@ -36,12 +41,21 @@ const FeedbackProvider = ({ children }) => {
     }
   };
 
+  const clickEditHandler = item => {
+    setFeedbackEdit({
+      item,
+      edit: true,
+    });
+  };
+
   return (
     <FeedbackContext.Provider
       value={{
         feedback,
+        feedbackEdit,
         clickAddHandler,
         clickDeleteHandler,
+        clickEditHandler,
       }}
     >
       {children}
