@@ -11,16 +11,14 @@ const FeedbackItem = ({ feedbackItem }) => {
       return !prev;
     });
   };
-
   const click = () => {
     return clickDeleteHandler(feedbackItem.id);
   };
+  const checkMode = isDarkMode ? <FaRegLightbulb /> : <FaLightbulb />;
 
   return (
     <Card reverse={isDarkMode}>
-      <button onClick={handleModeClick}>
-        {isDarkMode ? <FaRegLightbulb /> : <FaLightbulb />}
-      </button>
+      <button onClick={handleModeClick}>{checkMode}</button>
       <div className="num-display">{feedbackItem.rating}</div>
       <button className="close" onClick={click}>
         <FaTimes color="purple" />

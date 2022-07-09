@@ -13,10 +13,7 @@ const FeedbackList = () => {
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0 }}
       >
-        <FeedbackItem
-          key={feedbackItem.id}
-          feedbackItem={feedbackItem}
-        />
+        <FeedbackItem key={feedbackItem.id} feedbackItem={feedbackItem} />
       </motion.div>
     );
   });
