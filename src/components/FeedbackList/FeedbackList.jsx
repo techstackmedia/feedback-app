@@ -1,7 +1,10 @@
 import { motion, AnimatePresence } from 'framer-motion';
+import { useContext } from 'react';
+import FeedbackContext from '../../context/FeedbackContext';
 import FeedbackItem from '../FeedbackItem/FeedbackItem';
 
-const FeedbackList = ({ feedback, handleDelete }) => {
+const FeedbackList = () => {
+  const { feedback } = useContext(FeedbackContext);
   const feedbackElement = feedback.map(feedbackItem => {
     return (
       <motion.div
@@ -13,7 +16,6 @@ const FeedbackList = ({ feedback, handleDelete }) => {
         <FeedbackItem
           key={feedbackItem.id}
           feedbackItem={feedbackItem}
-          handleClick={handleDelete}
         />
       </motion.div>
     );

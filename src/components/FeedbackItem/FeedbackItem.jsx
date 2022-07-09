@@ -1,8 +1,11 @@
+import { useContext } from 'react';
 import { useState } from 'react';
 import { FaRegLightbulb, FaLightbulb, FaTimes } from 'react-icons/fa';
+import FeedbackContext from '../../context/FeedbackContext';
 import Card from '../../Customs/Card';
 
-const FeedbackItem = ({ feedbackItem, handleClick }) => {
+const FeedbackItem = ({ feedbackItem }) => {
+  const { clickDeleteHandler } = useContext(FeedbackContext);
   const [isDarkMode, setIsDarkMode] = useState(true);
   const handleModeClick = () => {
     setIsDarkMode(prev => {
@@ -11,7 +14,7 @@ const FeedbackItem = ({ feedbackItem, handleClick }) => {
   };
 
   const click = () => {
-    return handleClick(feedbackItem.id);
+    return clickDeleteHandler(feedbackItem.id);
   };
 
   return (
