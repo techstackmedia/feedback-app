@@ -1,14 +1,13 @@
-import { useParams } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
 const Post = () => {
-  const params = useParams();
+  //   const status = 202;
+  const status = 404;
 
-  return (
-    <div className="container">
-      <h1>Post {params.id}</h1>
-      <p>Post {params.name}</p>
-    </div>
-  );
+  if (status === 404) {
+    return <Navigate to="/404Error" />;
+  }
+  return <h1>Post</h1>;
 };
 
 export default Post;
