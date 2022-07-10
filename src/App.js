@@ -7,6 +7,7 @@ import About from './pages/About';
 import Home from './pages/Home/Home';
 import Post from './components/Post/Post';
 import AboutIconLink from './components/AboutIconLink/AboutIconLink';
+import NotFound from './components/NotFound/NotFound';
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
             <Route path="/about" element={<About />}></Route>
             <Route path="/about" element={<About />}></Route>
             <Route path="/post" element={<Post />}></Route>
+            <Route path="/notfound" element={<NotFound />}></Route>
           </Routes>
         </div>
         <AboutIconLink />

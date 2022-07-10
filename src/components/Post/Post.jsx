@@ -5,7 +5,7 @@ const Post = () => {
   const status = 404;
 
   if (status === 404) {
-    return <Navigate to="/404Error" />;
+    return <Navigate to="/notfound" />;
   }
   return <h1>Post</h1>;
 };
