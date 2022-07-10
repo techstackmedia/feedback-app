@@ -18,9 +18,8 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />}></Route>
             <Route path="/about" element={<About />}></Route>
-            <Route path="/about" element={<About />}></Route>
             <Route path="/post" element={<Post />}></Route>
-            <Route path="/notfound" element={<NotFound />}></Route>
+            <Route path="/*" element={<NotFound />}></Route>
           </Routes>
         </div>
         <AboutIconLink />

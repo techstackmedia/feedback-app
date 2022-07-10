@@ -1,9 +1,7 @@
 import { Navigate } from 'react-router-dom';
 
 const Post = () => {
-  //   const status = 202;
-  const status = 404;
-
+  const status = 202;
   if (status === 404) {
     return <Navigate to="/notfound" />;
   }
