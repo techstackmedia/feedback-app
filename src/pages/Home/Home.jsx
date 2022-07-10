@@ -5,17 +5,15 @@ import FeedbackList from '../../components/FeedbackList/FeedbackList';
 const Home = () => {
   return (
     <>
-      <div className="container">
-        <motion.div
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0 }}
-        >
-          <FeedbackForm />
-          <FeedbackStats />
-          <FeedbackList />
-        </motion.div>
-      </div>
+      <motion.div
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0, scale: 0 }}
+      >
+        <FeedbackForm />
+        <FeedbackStats />
+        <FeedbackList />
+      </motion.div>
     </>
   );
 };
