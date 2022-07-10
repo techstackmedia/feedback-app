@@ -31,8 +31,9 @@ const FeedbackProvider = ({ children }) => {
     // newFeedback.id = uuidv4();
     setFeedback([data, ...feedback]);
   };
-  const clickDeleteHandler = id => {
+  const clickDeleteHandler = async id => {
     if (window.confirm('Are you sure you want to delete?')) {
+      await fetch(`/feedback/${id}`, { method: 'DELETE' });
       setFeedback(prev => {
         return prev.filter(item => {
           return item.id !== id;
