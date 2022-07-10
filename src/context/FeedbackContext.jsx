@@ -47,10 +47,17 @@ const FeedbackProvider = ({ children }) => {
       edit: true,
     });
   };
-  const clickUpdateHandler = (id, itemUpdate) => {
+  const clickUpdateHandler = async (id, itemUpdate) => {
+    const response = await fetch(`/feedback/${id}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(itemUpdate),
+    });
+
+    const data = await response.json();
     setFeedback(
       feedback.map(item => {
-        return item.id === id ? { ...item, ...itemUpdate } : item;
+        return item.id === id ? { ...item, ...data } : item;
       })
     );
   };
