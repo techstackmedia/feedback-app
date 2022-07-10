@@ -15,15 +15,17 @@ const App = () => {
           <Route path="/" element={<Home />}></Route>
           <Route path="/about" element={<About />}></Route>
         </Routes>
-        <Card>
-          <NavLink to="/" activeClassName="active">
-            Home
-          </NavLink>
+        <div className='container'>
+          <Card>
+            <NavLink to="/" activeClassName="active">
+              Home
+            </NavLink>
 
-          <NavLink to="/about" activeClassName="active">
-            About
-          </NavLink>
-        </Card>
+            <NavLink to="/about" activeClassName="active">
+              About
+            </NavLink>
+          </Card>
+        </div>
       </BrowserRouter>
     </FeedbackProvider>
   );
