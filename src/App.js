@@ -23,6 +23,7 @@ Header.defaultProps = {
   text: 'Feedback UI',
   bgColor: 'rgba(0, 0, 0, 0.4)',
   textColor: '#ff6a95',
+  textUnderline: 'none',
 };
 
 Header.propTypes = {
