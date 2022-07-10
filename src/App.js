@@ -1,27 +1,20 @@
 import PropTypes from 'prop-types';
-import { motion } from 'framer-motion';
 import Header from './components/Header/Header';
-import FeedbackForm from './components/FeedbackForm/FeedbackForm';
-import FeedbackList from './components/FeedbackList/FeedbackList';
-import FeedbackStats from './components/FeedbackStats/FeedbackStats';
 import Button from './shared/Button';
 import { FeedbackProvider } from './context/FeedbackContext';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import About from './pages/About';
+import Home from './pages/Home/Home';
 
 const App = () => {
   return (
     <FeedbackProvider>
-      <Header />
-      <div className="container">
-        <motion.div
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0 }}
-        >
-          <FeedbackForm />
-          <FeedbackStats />
-          <FeedbackList />
-        </motion.div>
-      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/about" element={<About />}></Route>
+        </Routes>
+      </BrowserRouter>
     </FeedbackProvider>
   );
 };
