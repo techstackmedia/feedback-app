@@ -18,13 +18,15 @@ const FeedbackItem = ({ feedbackItem }) => {
 
   return (
     <Card reverse={!isDarkMode}>
-      <button onClick={handleModeClick}>{checkMode}</button>
+      <button onClick={handleModeClick} className="light-bulb">
+        {checkMode}
+      </button>
       <div className="num-display">{feedbackItem.rating}</div>
       <button className="close" onClick={click}>
-        <FaTimes color="purple" />
+        <FaTimes />
       </button>
       <button className="edit" onClick={() => clickEditHandler(feedbackItem)}>
-        <FaEdit color="purple" />
+        <FaEdit />
       </button>
       <div className="text-display">{feedbackItem.text}</div>
     </Card>

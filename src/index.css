@@ -135,18 +135,27 @@ input:focus {
   left: -10px;
 }
 
+.light-bulb,
 .close,
 .edit {
   position: absolute;
   top: 10px;
-  right: 20px;
   cursor: pointer;
   background: none;
   border: none;
+  color: purple;
+}
+
+.close {
+  right: 20px;
 }
 
 .edit {
   right: 40px;
+}
+
+.light-bulb {
+  right: 60px;
 }
 
 .btn {
