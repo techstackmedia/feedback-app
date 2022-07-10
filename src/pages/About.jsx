@@ -1,10 +1,8 @@
 import { Link } from 'react-router-dom';
 import Card from '../shared/Card';
-import Header from '../components/Header/Header';
 const About = () => {
   return (
     <>
-      <Header />
       <div className="container">
         <Card>
           <div className="about">
