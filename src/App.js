@@ -5,7 +5,6 @@ import { FeedbackProvider } from './context/FeedbackContext';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import About from './pages/About';
 import Home from './pages/Home/Home';
-import Post from './components/Post/Post';
 import AboutIconLink from './components/AboutIconLink/AboutIconLink';
 import NotFound from './components/NotFound/NotFound';
 
@@ -18,8 +17,6 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />}></Route>
             <Route path="/about" element={<About />}></Route>
-            <Route path="/post" element={<Post />}></Route>
-            <Route path="/post/*" element={<Post />}></Route>
             <Route path="/*" element={<NotFound />}></Route>
           </Routes>
         </div>
