@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import { FaTimes } from 'react-icons/fa';
 import Card from '../../UI/Card';
 const FeedbackItem = ({ feedbackItem, handleClick }) => {
@@ -11,10 +10,6 @@ const FeedbackItem = ({ feedbackItem, handleClick }) => {
       <div className="text-display">{feedbackItem.text}</div>
     </Card>
   );
-};
-
-FeedbackItem.propTypes = {
-  feedbackItem: PropTypes.object.isRequired,
 };
 
 export default FeedbackItem;
