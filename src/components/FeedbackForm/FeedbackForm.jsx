@@ -1,9 +1,21 @@
-import { useState } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import Card from '../../shared/Card';
 import Button from '../../shared/Button';
 import RatingSelect from '../RatingSelect/RatingSelect';
+import FeedbackContext from '../../context/FeedbackContext';
 
-const FeedbackForm = ({ handleAdd }) => {
+const FeedbackForm = () => {
+  const { clickAddHandler, feedbackEdit, clickUpdateHandler } =
+    useContext(FeedbackContext);
+
+  useEffect(() => {
+    if (feedbackEdit.edit === true) {
+      setBtnDisabled(false);
+      setText(feedbackEdit.item.text);
+      setRating(feedbackEdit.item.rating);
+    }
+  }, [feedbackEdit]);
+
   const [text, setText] = useState('');
   const [rating, setRating] = useState(10);
   const [btnDisabled, setBtnDisabled] = useState(true);
@@ -21,6 +33,7 @@ const FeedbackForm = ({ handleAdd }) => {
     }
     setText(e.target.value);
   };
+
   const handleSelect = rating => {
     setRating(rating);
   };
@@ -29,7 +42,11 @@ const FeedbackForm = ({ handleAdd }) => {
 
     if (text.trim().length > 10) {
       const newFeedback = { text, rating };
-      handleAdd(newFeedback);
+      if (feedbackEdit.edit === true) {
+        clickUpdateHandler(feedbackEdit.item.id, newFeedback);
+      } else {
+        clickAddHandler(newFeedback);
+      }
     }
 
     setText('');
@@ -44,7 +61,7 @@ const FeedbackForm = ({ handleAdd }) => {
           <input
             type="text"
             placeholder="Write a review"
-            value={text}
+            value={text ?? ''}
             onChange={handleTextChange}
           />
           <Button type="submit" isDisabled={btnDisabled}>
