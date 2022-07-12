@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import Card from '../shared/Card';
 import Header from '../components/Header/Header';
+
 const About = () => {
   return (
     <>
@@ -11,7 +12,6 @@ const About = () => {
           <motion.div
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0 }}
             transition={{ ease: 'easeInOut', duration: 0.3 }}
           >
             <Card>
