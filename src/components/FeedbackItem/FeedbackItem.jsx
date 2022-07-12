@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import Card from '../../UI/Card';
 const FeedbackItem = ({ feedbackItem }) => {
   return (
@@ -9,10 +8,6 @@ const FeedbackItem = ({ feedbackItem }) => {
       <div className="text-display">{feedbackItem.text}</div>
     </Card>
   );
-};
-
-FeedbackItem.propTypes = {
-  feedbackItem: PropTypes.object.isRequired,
 };
 
 export default FeedbackItem;
