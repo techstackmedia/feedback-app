@@ -2,19 +2,19 @@ import PropTypes from 'prop-types';
 import Header from './components/Header/Header';
 import Button from './shared/Button';
 import { FeedbackProvider } from './context/FeedbackContext';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import About from './pages/About';
 import Home from './pages/Home/Home';
 
 const App = () => {
   return (
     <FeedbackProvider>
-      <BrowserRouter>
+      <Router>
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/about" element={<About />}></Route>
         </Routes>
-      </BrowserRouter>
+      </Router>
     </FeedbackProvider>
   );
 };
