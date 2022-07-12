@@ -6,22 +6,22 @@ import RatingSelect from '../RatingSelect/RatingSelect';
 const FeedbackForm = () => {
   const [text, setText] = useState('');
   const [setRating] = useState(10);
-  const [btnDisabled, setBtnDisabled] = useState(true);
   const [message, setMessage] = useState('');
-
+  const [btnDisabled, setBtnDisabled] = useState(true);
   const handleTextChange = e => {
-    if (text === '') {
-      setBtnDisabled(true);
+    if (text.trim().length < 0) {
       setMessage(null);
-    } else if (text !== '' && text.trim().length <= 10) {
       setBtnDisabled(true);
+    } else if (text.trim().length < 10) {
       setMessage('Text must be more than 10 characters');
+      setBtnDisabled(true);
     } else {
       setBtnDisabled(false);
       setMessage(null);
     }
     setText(e.target.value);
   };
+
   const handleSelect = rating => {
     setRating(rating);
   };
@@ -42,8 +42,7 @@ const FeedbackForm = () => {
             Send
           </Button>
         </div>
-
-        {message && <div className="message">{message}</div>}
+        <div className="message">{message}</div>
       </form>
     </Card>
   );
