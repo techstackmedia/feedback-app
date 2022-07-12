@@ -3,7 +3,6 @@ import Header from '../../components/Header/Header';
 import FeedbackForm from '../../components/FeedbackForm/FeedbackForm';
 import FeedbackStats from '../../components/FeedbackStats/FeedbackStats';
 import FeedbackList from '../../components/FeedbackList/FeedbackList';
-import AboutIconLink from '../../components/AboutIconLink/AboutIconLink';
 const Home = () => {
   return (
     <>
@@ -19,7 +18,6 @@ const Home = () => {
           <FeedbackList />
         </motion.div>
       </div>
-      <AboutIconLink />
     </>
   );
 };
