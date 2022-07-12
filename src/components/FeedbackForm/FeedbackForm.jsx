@@ -6,8 +6,8 @@ import RatingSelect from '../RatingSelect/RatingSelect';
 const FeedbackForm = ({ handleAdd }) => {
   const [text, setText] = useState('');
   const [rating, setRating] = useState(10);
-  const [message, setMessage] = useState('');
   const [btnDisabled, setBtnDisabled] = useState(true);
+  const [message, setMessage] = useState('');
   const handleTextChange = e => {
     if (text.trim().length < 0) {
       setMessage(null);
@@ -25,7 +25,6 @@ const FeedbackForm = ({ handleAdd }) => {
   const handleSelect = rating => {
     setRating(rating);
   };
-
   const handleSubmit = e => {
     e.preventDefault();
 

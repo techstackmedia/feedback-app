@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
+import { v4 as uuidv4 } from 'uuid';
+import { motion } from 'framer-motion';
 import Header from './components/Header/Header';
 import FeedbackForm from './components/FeedbackForm/FeedbackForm';
 import FeedbackList from './components/FeedbackList/FeedbackList';
@@ -10,6 +12,12 @@ import Button from './Customs/Button';
 
 const App = () => {
   const [feedback, setFeedback] = useState(FeedbackData);
+
+  const clickAddHandler = newFeedback => {
+    newFeedback.id = uuidv4();
+    setFeedback([newFeedback, ...feedback]);
+  };
+
   const clickDeleteHandler = id => {
     if (window.confirm('Are you sure you want to delete?')) {
       setFeedback(prev => {
@@ -24,9 +32,15 @@ const App = () => {
     <>
       <Header />
       <div className="container">
-        <FeedbackForm />
-        <FeedbackStats feedback={feedback} />
-        <FeedbackList feedback={feedback} handleDelete={clickDeleteHandler} />
+        <motion.div
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0 }}
+        >
+          <FeedbackForm handleAdd={clickAddHandler} />
+          <FeedbackStats feedback={feedback} />
+          <FeedbackList feedback={feedback} handleDelete={clickDeleteHandler} />
+        </motion.div>
       </div>
     </>
   );
@@ -57,6 +71,7 @@ FeedbackStats.prototype = {
 FeedbackList.propTypes = {
   feedback: PropTypes.arrayOf(
     PropTypes.shape({
+      id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
       text: PropTypes.string.isRequired,
       rating: PropTypes.number.isRequired,
     })
