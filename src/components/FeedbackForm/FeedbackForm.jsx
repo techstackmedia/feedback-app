@@ -29,7 +29,7 @@ const FeedbackForm = () => {
   return (
     <Card>
       <h2>How would you rate your service with us?</h2>
-      <RatingSelect select={handleSelect} />
+      <RatingSelect handleSelect={handleSelect} />
       <form>
         <div className="input-group">
           <input

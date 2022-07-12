@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
-const RatingSelect = ({ select }) => {
+const RatingSelect = ({ handleSelect }) => {
   const [selected, setSelected] = useState(10);
   const handleChange = e => {
     setSelected(+e.currentTarget.value);
-    select(+e.currentTarget.value);
+    handleSelect(+e.currentTarget.value);
   };
   const numbers = Array.from(Array(11).keys()).splice(1);
   const selectList = numbers.map(item => {
