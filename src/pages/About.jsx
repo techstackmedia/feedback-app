@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
 import Card from '../shared/Card';
 import Header from '../components/Header/Header';
-import { AnimatePresence, motion } from 'framer-motion';
 
 const About = () => {
   return (
