@@ -2,10 +2,9 @@ import PropTypes from 'prop-types';
 import Header from './components/Header/Header';
 import Button from './shared/Button';
 import { FeedbackProvider } from './context/FeedbackContext';
-import { BrowserRouter, Route, Routes, NavLink } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import About from './pages/About';
 import Home from './pages/Home/Home';
-import Card from './shared/Card';
 
 const App = () => {
   return (
@@ -15,17 +14,6 @@ const App = () => {
           <Route path="/" element={<Home />}></Route>
           <Route path="/about" element={<About />}></Route>
         </Routes>
-        <div className='container'>
-          <Card>
-            <NavLink to="/" activeClassName="active">
-              Home
-            </NavLink>
-
-            <NavLink to="/about" activeClassName="active">
-              About
-            </NavLink>
-          </Card>
-        </div>
       </BrowserRouter>
     </FeedbackProvider>
   );
