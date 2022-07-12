@@ -1,13 +1,23 @@
-const Header = ({ text, bgColor, textColor }) => {
+import { Link } from 'react-router-dom';
+
+const Header = ({ text, bgColor, textColor, textUnderline }) => {
   const headerStyles = {
     backgroundColor: bgColor,
-    color: textColor,
   };
-  
+
+  const headerLinkStyles = {
+    color: textColor,
+    textDecoration: textUnderline,
+  };
+
   return (
     <header style={headerStyles}>
       <div className="container">
-        <h2>{text}</h2>
+        <h2>
+          <Link to="/" style={headerLinkStyles}>
+            {text}
+          </Link>
+        </h2>
       </div>
     </header>
   );
