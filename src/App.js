@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
+import { v4 as uuidv4 } from 'uuid';
 import Header from './components/Header/Header';
 import FeedbackForm from './components/FeedbackForm/FeedbackForm';
 import FeedbackList from './components/FeedbackList/FeedbackList';
@@ -10,6 +11,12 @@ import Button from './Customs/Button';
 
 const App = () => {
   const [feedback, setFeedback] = useState(FeedbackData);
+
+  const clickAddHandler = newFeedback => {
+    newFeedback.id = uuidv4();
+    setFeedback([newFeedback, ...feedback]);
+  };
+
   const clickDeleteHandler = id => {
     if (window.confirm('Are you sure you want to delete?')) {
       setFeedback(prev => {
@@ -24,9 +31,9 @@ const App = () => {
     <>
       <Header />
       <div className="container">
-        <FeedbackForm />
-        <FeedbackStats feedback={feedback} />
-        <FeedbackList feedback={feedback} handleDelete={clickDeleteHandler} />
+          <FeedbackForm handleAdd={clickAddHandler} />
+          <FeedbackStats feedback={feedback} />
+          <FeedbackList feedback={feedback} handleDelete={clickDeleteHandler} />
       </div>
     </>
   );
@@ -57,7 +64,7 @@ FeedbackStats.prototype = {
 FeedbackList.propTypes = {
   feedback: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.number.isRequired,
+      id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
       text: PropTypes.string.isRequired,
       rating: PropTypes.number.isRequired,
     })

@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+
 const Card = ({ children, className, reverse }) => {
   const classReverser = {
     backgroundColor: reverse ? 'rgba(0, 0, 0, 0.4)' : '#fff',
