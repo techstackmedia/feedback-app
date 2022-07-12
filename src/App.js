@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import Header from './components/Header/Header';
 import FeedbackForm from './components/FeedbackForm/FeedbackForm';
 import FeedbackList from './components/FeedbackList/FeedbackList';
+import FeedbackItem from './components/FeedbackItem/FeedbackItem';
 import FeedbackStats from './components/FeedbackStats/FeedbackStats';
 import Button from './shared/Button';
 import { FeedbackProvider } from './context/FeedbackContext';
@@ -36,6 +37,30 @@ Header.propTypes = {
   text: PropTypes.string,
   bgColor: PropTypes.string,
   textColor: PropTypes.string,
+};
+
+FeedbackStats.prototype = {
+  feedback: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      rating: PropTypes.number,
+      text: PropTypes.string,
+    }).isRequired
+  ),
+};
+
+FeedbackList.propTypes = {
+  feedback: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+      text: PropTypes.string.isRequired,
+      rating: PropTypes.number.isRequired,
+    })
+  ),
+};
+
+FeedbackItem.propTypes = {
+  feedbackItem: PropTypes.object.isRequired,
 };
 
 Button.defaultProps = {

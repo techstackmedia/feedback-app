@@ -1,10 +1,8 @@
-import { useContext, useState } from 'react';
-import { FaRegLightbulb, FaLightbulb, FaTimes, FaEdit } from 'react-icons/fa';
-import FeedbackContext from '../../context/FeedbackContext';
+import { useState } from 'react';
+import { FaRegLightbulb, FaLightbulb, FaTimes } from 'react-icons/fa';
 import Card from '../../shared/Card';
 
-const FeedbackItem = ({ feedbackItem }) => {
-  const { clickDeleteHandler, clickEditHandler } = useContext(FeedbackContext);
+const FeedbackItem = ({ feedbackItem, handleClick }) => {
   const [isDarkMode, setIsDarkMode] = useState(true);
   const handleModeClick = () => {
     setIsDarkMode(prev => {
@@ -13,7 +11,7 @@ const FeedbackItem = ({ feedbackItem }) => {
   };
 
   const click = () => {
-    return clickDeleteHandler(feedbackItem.id);
+    return handleClick(feedbackItem.id);
   };
 
   return (
@@ -24,9 +22,6 @@ const FeedbackItem = ({ feedbackItem }) => {
       <div className="num-display">{feedbackItem.rating}</div>
       <button className="close" onClick={click}>
         <FaTimes color="purple" />
-      </button>
-      <button className="edit" onClick={() => clickEditHandler(feedbackItem)}>
-        <FaEdit color="purple" />
       </button>
       <div className="text-display">{feedbackItem.text}</div>
     </Card>
