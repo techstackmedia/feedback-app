@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
-import { motion } from 'framer-motion';
 import Header from './components/Header/Header';
 import FeedbackForm from './components/FeedbackForm/FeedbackForm';
 import FeedbackList from './components/FeedbackList/FeedbackList';
@@ -32,15 +31,9 @@ const App = () => {
     <>
       <Header />
       <div className="container">
-        <motion.div
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0 }}
-        >
           <FeedbackForm handleAdd={clickAddHandler} />
           <FeedbackStats feedback={feedback} />
           <FeedbackList feedback={feedback} handleDelete={clickDeleteHandler} />
-        </motion.div>
       </div>
     </>
   );
