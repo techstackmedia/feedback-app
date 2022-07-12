@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import Card from '../../Customs/Card';
-import Button from '../../Customs/Button';
+import Card from '../../shared/Card';
+import Button from '../../shared/Button';
 import RatingSelect from '../RatingSelect/RatingSelect';
 
 const FeedbackForm = ({ handleAdd }) => {
