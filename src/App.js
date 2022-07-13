@@ -1,9 +1,4 @@
-import {
-  BrowserRouter as Router,
-  NavLink,
-  Route,
-  Routes,
-} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Header from './components/Header/Header';
 import Button from './shared/Button';
@@ -17,11 +12,15 @@ const App = () => {
   return (
     <FeedbackProvider>
       <Router>
-        <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/about" element={<About />}></Route>
-        </Routes>
-        <Footer />
+        <Header />
+        <div className="container">
+          <Routes>
+            <Route path="/" element={<Home />}></Route>
+            <Route path="/about" element={<About />}></Route>
+          </Routes>
+          <Footer />
+        </div>
+
         <AboutIconLink />
       </Router>
     </FeedbackProvider>

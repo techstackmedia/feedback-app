@@ -1,12 +1,10 @@
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import Card from '../shared/Card';
-import Header from '../components/Header/Header';
 
 const About = () => {
   return (
     <>
-      <Header />
       <div className="container">
         <AnimatePresence>
           <motion.div
