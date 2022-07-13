@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  NavLink,
+  Route,
+  Routes,
+} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Header from './components/Header/Header';
 import Button from './shared/Button';
@@ -6,6 +11,7 @@ import { FeedbackProvider } from './context/FeedbackContext';
 import About from './pages/About';
 import Home from './pages/Home/Home';
 import AboutIconLink from './components/AboutIconLink/AboutIconLink';
+import Footer from './components/Footer/Footer';
 
 const App = () => {
   return (
@@ -15,6 +21,7 @@ const App = () => {
           <Route path="/" element={<Home />}></Route>
           <Route path="/about" element={<About />}></Route>
         </Routes>
+        <Footer />
         <AboutIconLink />
       </Router>
     </FeedbackProvider>
