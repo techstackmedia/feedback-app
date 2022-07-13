@@ -1,9 +1,4 @@
-import {
-  BrowserRouter as Router,
-  NavLink,
-  Route,
-  Routes,
-} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Header from './components/Header/Header';
 import Button from './shared/Button';
@@ -12,6 +7,7 @@ import About from './pages/About';
 import Home from './pages/Home/Home';
 import AboutIconLink from './components/AboutIconLink/AboutIconLink';
 import Footer from './components/Footer/Footer';
+import Post from './components/Post/Post';
 
 const App = () => {
   return (
@@ -20,6 +16,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/about" element={<About />}></Route>
+          <Route path="/post/:id/:name" element={<Post />}></Route>
         </Routes>
         <Footer />
         <AboutIconLink />
