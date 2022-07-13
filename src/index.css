@@ -255,7 +255,7 @@ input:focus {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100vh;
+  height: calc(100vh - 70px);
   align-items: center;
   color: #fff;
 }
