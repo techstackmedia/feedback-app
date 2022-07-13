@@ -6,6 +6,7 @@ import { FeedbackProvider } from './context/FeedbackContext';
 import About from './pages/About';
 import Home from './pages/Home/Home';
 import AboutIconLink from './components/AboutIconLink/AboutIconLink';
+import NotFound from './NotFound/NotFound';
 import Footer from './components/Footer/Footer';
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />}></Route>
             <Route path="/about" element={<About />}></Route>
+            <Route path="*" element={<NotFound />}></Route>
           </Routes>
           <Footer />
         </div>

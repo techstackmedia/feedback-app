@@ -251,6 +251,32 @@ input:focus {
   }
 }
 
+.not-found {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+  color: #fff;
+}
+
+.not-found h1 {
+  font-size: 44px;
+  margin: 0;
+}
+
+.not-found h2 {
+  margin: 0 0 10px;
+  font-size: 34px;
+}
+
+.not-found a {
+  background-color: #fff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
 .footer a {
   text-decoration: none;
 }
